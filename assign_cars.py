@@ -9,11 +9,7 @@ def closest_car(cars, ride):
 def get_new_sorted_rides(sorted_rides, num_rides_removed):
   new_sorted_rides = []
   ride_number = 0
-  for ride in sorted_rides:
-    if ride_number >= num_rides_removed:
-      new_sorted_rides.append(ride)
-    ride_number = ride_number + 1
-  return new_sorted_rides
+  return sorted_rides[num_rides_removed:]
 
 # At a single time step
 # Given all the available cars
