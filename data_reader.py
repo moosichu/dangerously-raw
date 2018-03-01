@@ -5,6 +5,7 @@ def read_data(file_name):
         first_line = file.readline().split()
         rides = []
         line = file.readline()
+        ride_id = 0
         while line != "":
             ride_info = line.split()
             rides.append({
@@ -13,9 +14,11 @@ def read_data(file_name):
                 "fin_row":         ride_info[2],
                 "fin_col":         ride_info[3],
                 "earliest_start":  ride_info[4],
-                "latest_finish":   ride_info[5]
+                "latest_finish":   ride_info[5],
+                "ride_id": ride_id
             })
             line = file.readline()
+            ride_id = ride_id + 1
 
         result = {
             "num_rows":   first_line[0],
