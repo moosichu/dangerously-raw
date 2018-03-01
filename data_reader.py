@@ -7,6 +7,7 @@ class Car:
     def __str__(self):
         return "id:" + str(self.id) + "; position: " + str(self.position) + "; destination: " + str(self.destination) + ";\n"
 
+
 def read_data(file_name):
     with open(file_name) as file:
         first_line = file.readline().split()
@@ -39,6 +40,7 @@ def read_data(file_name):
 
     return result
 
+
 def get_init_cars():
     result = read_data("input/a_example.in")
     avail_cars = []
@@ -47,6 +49,7 @@ def get_init_cars():
         car.id = i
         avail_cars.append(car)
     return avail_cars
+
 
 if __name__ == "__main__":
     data = read_data("input/a_example.in")
