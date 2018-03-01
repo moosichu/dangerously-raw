@@ -1,6 +1,7 @@
 class Car:
     id = 0
-    position = (0,0)
+    x = 0
+    y = 0
     destination = None
     def __repr__(self):
       return str(self)
