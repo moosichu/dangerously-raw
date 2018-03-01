@@ -17,6 +17,7 @@ if __name__ == "__main__":
         print("operating on {}".format(filename))
         input_data = dr.read_data("input/" + filename + ".in")
         list_of_cars = car.get_car_list(input_data["num_vehs"]) # takes number of cars and returns list of cars of that size
+        print(list_of_cars)
         output_data = solver.solve(
             list_of_cars = list_of_cars,
             list_of_rides = input_data["rides"],
