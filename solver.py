@@ -25,10 +25,14 @@ def solve(list_of_cars, list_of_rides, sim_steps):
             result[car_id].append(ride_id)
             cars_in_flight.append((car, list_of_rides[ride_id], False))
 
-        # TODO" uncomment when Jared is ready
         # cars_in_flight, newly_available_cars = sim.perform_time_step(
         #     t, cars_in_flight
         # )
+
+        # TODO: Uncomment IF car info isn't properly copied
+        # for car, ride, is_available in cars_in_flight:
+        #     if car.id in available_cars.keys():
+        #         available_cars[car.id] = car
 
         # # Add the newly_available_cars to list of available cars
         # for available_car in newly_available_cars:
