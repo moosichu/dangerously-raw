@@ -1,5 +1,8 @@
+def get_distance(row1,col1,row2,col2):
+  return abs(row1-row2) + abs(col1-col2)
+
 def get_ride_length(ride):
-  return abs(ride.start_row-ride.fin_row) + abs(ride.start_col-ride.fin_col)
+  return get_distance(ride.start_row, ride.fin_row, ride.start_col, ride.fin_col)
 
 def get_latest_possible_start_time(ride):
   return ride.latest_finish - get_ride_length(ride)
