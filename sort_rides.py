@@ -6,5 +6,5 @@ def get_latest_possible_start_time(ride):
 
 # Take in a list of unclaimed rides
 # Return the rides sorted by the latest possible start time
-def sort_rides(rides)
+def sort_rides(rides):
   return sorted(rides, key=get_latest_possible_start_time)
