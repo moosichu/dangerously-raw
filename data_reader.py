@@ -1,42 +1,35 @@
 
 
 def read_data(file_name):
-    return {
-        "num_rows": 3,
-        "num_cols": 4,
-        "num_vehs": 2,
-        "num_rides": 3,
-        "ride_bonus": 2,
-        "sim_steps": 10,
-        "rides": [
-            {
-                "start_row": 0,
-                "start_col": 0,
-                "fin_row": 1,
-                "fin_col": 3,
-                "earliest_start": 2,
-                "latest_finish": 9
-            },
-            {
-                "start_row": 1,
-                "start_col": 2,
-                "fin_row": 1,
-                "fin_col": 0,
-                "earliest_start": 0,
-                "latest_finish": 9
-            },
-            {
-                "start_row": 2,
-                "start_col": 0,
-                "fin_row": 2,
-                "fin_col": 2,
-                "earliest_start": 0,
-                "latest_finish": 9
-            }
-        ]
-    }
+    with open(file_name) as file:
+        first_line = file.readline().split()
+        rides = []
+        line = file.readline()
+        while line != "":
+            ride_info = line.split()
+            rides.append({
+                "start_row":       ride_info[0],
+                "start_col":       ride_info[1],
+                "fin_row":         ride_info[2],
+                "fin_col":         ride_info[3],
+                "earliest_start":  ride_info[4],
+                "latest_finish":   ride_info[5]
+            })
+            line = file.readline()
+
+        result = {
+            "num_rows":   first_line[0],
+            "num_cols":   first_line[1],
+            "num_vehs":   first_line[2],
+            "num_rides":  first_line[3],
+            "ride_bonus": first_line[4],
+            "sim_steps":  first_line[5],
+            "rides":      rides
+        }
+
+    return result
 
 
 if __name__ == "__main__":
-    data = read_data("stat")
+    data = read_data("input/a_example.in")
     print(data)
