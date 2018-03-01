@@ -20,6 +20,6 @@ def assign_cars(available_cars, sorted_rides, t):
     # Get the closest car
     cc = closest_car(available_cars.values(), ride)
     # Make the assignment and remove the car from available cars
-    assignments[cc.id] = ride["ride_id"]
+    assignments[cc.id] = (available_cars[cc.id], ride["ride_id"])
     del(available_cars[cc.id])
   return assignments

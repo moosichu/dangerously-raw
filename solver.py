@@ -4,6 +4,7 @@ import sort_rides as sr
 def solve(list_of_cars, list_of_rides, sim_steps):
     # Currently a stub
     available_cars = {}
+    cars_int_flight = []
     result = {}
     for car in list_of_cars:
         available_cars[car.id] = car
@@ -17,9 +18,13 @@ def solve(list_of_cars, list_of_rides, sim_steps):
             t = t
         )
 
-        for car_id, ride_id in assignments.items():
-            # TODO: add cars to cars in flight
+        for car_id, (car, ride_id) in assignments.items():
+            rides = result["rides"]
+            fin_row = rides[ride_id]["fin_row"]
+            fin_col = rides[ride_id]["fin_col"]
+            car.destination = (fin_col, fin_row)
             result[car_id].append(ride_id)
+            cars_int_flight.append(car, ride_id, False)
             pass
 
     # TODO: use the simulator
