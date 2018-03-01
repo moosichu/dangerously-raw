@@ -29,20 +29,3 @@ def read_data(file_name):
             "sim_steps":  int(first_line[5]),
             "rides":      rides
         }
-
-    return result
-
-
-def get_init_cars():
-    result = read_data("input/a_example.in")
-    avail_cars = []
-    for i in range(0, int(result["num_vehs"])):
-        car = Car()
-        car.id = i
-        avail_cars.append(car)
-    return avail_cars
-
-
-if __name__ == "__main__":
-    data = read_data("input/a_example.in")
-    #print(data)
