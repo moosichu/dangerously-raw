@@ -18,7 +18,6 @@ def solve(list_of_cars, list_of_rides, sim_steps):
         )
 
         for car_id, ride_id in assignments.items():
-            # TODO: Remove cars from available cars list
             # TODO: add cars to cars in flight
             result[car_id].append(ride_id)
             pass
