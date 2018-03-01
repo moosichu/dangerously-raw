@@ -2,12 +2,12 @@
 
 def write_data(data, file_name):
     with open(file_name, "w") as file:
-        for ride_id, rides in data.items():
-            num_rides = len(rides)
+        for car_id, ride_ids in data.items():
+            num_rides = len(ride_ids)
             # We want the first number to be the number of rides a given car does
             line = "{}".format(num_rides)
             # Give the ids of the rides the car does
-            for ride in rides:
+            for ride in ride_ids:
                 line += " {}".format(ride)
             line += "\n"
             file.write(line)
