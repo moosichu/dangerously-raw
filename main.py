@@ -4,11 +4,11 @@ import car
 import solver
 
 filenames = [
-    "a_example",
-    "b_should_be_easy",
-    "c_no_hurry",
-    "d_metropolis",
-    "e_high_bonus"
+    "a_example"
+    # "b_should_be_easy",
+    # "c_no_hurry",
+    # "d_metropolis",
+    # "e_high_bonus"
 ]
 
 
