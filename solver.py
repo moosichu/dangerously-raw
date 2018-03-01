@@ -14,13 +14,14 @@ def solve(list_of_cars, list_of_rides, sim_steps):
     sorted_rides = sr.sort_rides(list_of_rides)
     for t in range(0, sim_steps):
         # print("timestep: " + str(t))
+        # print("  cars:")
         # for car in available_cars.values():
-        #     print("available: " + str(car.id))
-        # for car, ride, picked_up in cars_in_flight:
-        #     print("in flight: " + str(car.id))
-        # print("\n")
+        #     print("    {}".format(car.id))
 
-        assignments = ac.assign_cars(
+        # print("  sorted_rides:")
+        # print(sorted_rides)
+
+        assignments, sorted_rides = ac.assign_cars(
             available_cars = available_cars,
             sorted_rides = sorted_rides,
             t = t
@@ -36,7 +37,6 @@ def solve(list_of_cars, list_of_rides, sim_steps):
             t, cars_in_flight
         )
 
-        # TODO: Uncomment IF car info isn't properly copied
         # for car, ride, is_available in cars_in_flight:
         #     if car.id in available_cars.keys():
         #         available_cars[car.id] = car
@@ -44,5 +44,8 @@ def solve(list_of_cars, list_of_rides, sim_steps):
         # Add the newly_available_cars to list of available cars
         for available_car in newly_available_cars:
             available_cars[available_car.id] = available_car
+
+        if sorted_rides == []:
+            break
 
     return result
