@@ -15,7 +15,7 @@ filenames = [
 if __name__ == "__main__":
     for filename in filenames:
         input_data = dr.read_data("input/" + filename + ".in")
-        list_of_cars = car.get_car_list(int(input_data["num_vehs"])) # takes number of cars and returns list of cars of that size
+        list_of_cars = car.get_car_list(input_data["num_vehs"]) # takes number of cars and returns list of cars of that size
         output_data = solver.solve(
             list_of_cars = list_of_cars,
             list_of_rides = input_data["rides"],
