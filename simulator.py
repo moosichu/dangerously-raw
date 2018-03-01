@@ -1,4 +1,4 @@
-from data_reader import Car
+from car import Car
 
 #Will take a list of cars in flight of the form (car_id, current_position, destination_position)
 #Will make one step in time, move the cars along and return a tuple with the next cars in flight and the cars which are now available
