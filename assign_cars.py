@@ -3,7 +3,7 @@ import sort_rides as sr
 # Takes a list of cars and a ride and returns the closest car
 # cars must be a non-empty array
 def closest_car(cars, ride):
-  return sorted(cars, key=lambda car: sr.get_distance(ride["start_row"], ride["start_col"], car.x, car.y))[0]
+  return sorted(cars, key=lambda car: sr.get_distance(ride["start_col"], ride["start_row"], car.x, car.y))[0]
 
 # At a single time step
 # Given all the available cars
