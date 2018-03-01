@@ -5,7 +5,7 @@ import simulator as sim
 def solve(list_of_cars, list_of_rides, sim_steps):
     # Currently a stub
     available_cars = {}
-    cars_int_flight = []
+    cars_in_flight = []
     result = {}
     for car in list_of_cars:
         available_cars[car.id] = car
@@ -22,11 +22,10 @@ def solve(list_of_cars, list_of_rides, sim_steps):
         for car_id, (car, ride_id) in assignments.items():
             fin_row = list_of_rides[ride_id]["fin_row"]
             fin_col = list_of_rides[ride_id]["fin_col"]
-            car.destination = (fin_col, fin_row)
             result[car_id].append(ride_id)
-            cars_int_flight.append((car, ride_id, False))
-            pass
+            cars_in_flight.append((car, list_of_rides[ride_id], False))
 
+        # TODO" uncomment when Jared is ready
         # cars_in_flight, newly_available_cars = sim.perform_time_step(
         #     t, cars_in_flight
         # )
