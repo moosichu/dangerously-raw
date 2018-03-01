@@ -15,7 +15,12 @@ def solve(list_of_cars, list_of_rides, sim_steps):
             t = t
         )
 
-        # TODO: use assignments
+        for assignment in assignments:
+            # TODO: Remove cars from available cars list
+            # TODO: add cars to cars in flight
+            # TODO: use the simulator
+            # TODO: add the rides to the result
+            pass
 
     return {
         0: [0, 2, 6],   # car 0 does rides 0, 2 and 6
