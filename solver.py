@@ -4,8 +4,10 @@ import sort_rides as sr
 def solve(list_of_cars, list_of_rides, sim_steps):
     # Currently a stub
     available_cars = {}
+    result = {}
     for car in list_of_cars:
         available_cars[car.id] = car
+        result[car.id] = []
 
     sorted_rides = sr.sort_rides(list_of_rides)
     for t in range(0, sim_steps):
@@ -15,7 +17,7 @@ def solve(list_of_cars, list_of_rides, sim_steps):
             t = t
         )
 
-        for assignment in assignments:
+        for car_id, ride_id in assignments.items():
             # TODO: Remove cars from available cars list
             # TODO: add cars to cars in flight
             # TODO: add the rides to the result
