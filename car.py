@@ -5,7 +5,7 @@ class Car:
     def __repr__(self):
       return str(self)
     def __str__(self):
-        return "id:" + str(self.id) + "; position: (" + str(self.x) + "," + str(self.y) + "); destination: " + str(self.destination) + ";\n"
+        return "id:" + str(self.id) + "; position: (" + str(self.x) + "," + str(self.y) + ")\n"
 
 
 def get_car_list(num_cars):
