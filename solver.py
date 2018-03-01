@@ -13,6 +13,10 @@ def solve(list_of_cars, list_of_rides, sim_steps):
 
     sorted_rides = sr.sort_rides(list_of_rides)
     for t in range(0, sim_steps):
+        print("timestep: " + str(t))
+        for car in available_cars.values():
+            print(car.id)
+
         assignments = ac.assign_cars(
             available_cars = available_cars,
             sorted_rides = sorted_rides,

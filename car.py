@@ -1,7 +1,8 @@
 class Car:
-    id = 0
-    x = 0
-    y = 0
+    def __init__(self, id, x, y):
+      self.id = id
+      self.x = x
+      self.y = y
     def __repr__(self):
       return str(self)
     def __str__(self):
@@ -11,7 +12,6 @@ class Car:
 def get_car_list(num_cars):
   result = []
   for car_id in range(0, num_cars):
-    car = Car()
-    car.id = car_id
-    result.append(Car())
+    car = Car(car_id, 0, 0)
+    result.append(car)
   return result
