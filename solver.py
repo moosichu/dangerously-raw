@@ -15,7 +15,10 @@ def solve(list_of_cars, list_of_rides, sim_steps):
     for t in range(0, sim_steps):
         print("timestep: " + str(t))
         for car in available_cars.values():
-            print(car.id)
+            print("available: " + str(car.id))
+        for car, ride, picked_up in cars_in_flight:
+            print("in flight: " + str(car.id))
+        print("\n")
 
         assignments = ac.assign_cars(
             available_cars = available_cars,
