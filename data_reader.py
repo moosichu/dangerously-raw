@@ -29,3 +29,5 @@ def read_data(file_name):
             "sim_steps":  int(first_line[5]),
             "rides":      rides
         }
+
+        return result

@@ -10,5 +10,8 @@ class Car:
 
 def get_car_list(num_cars):
   result = []
-  for car_num in range(0, num_cars):
+  for car_id in range(0, num_cars):
+    car = Car()
+    car.id = car_id
     result.append(Car())
+  return result
